@@ -1,0 +1,97 @@
+@font-face{
+    font-family: 'Bellota-Regular';
+    src:url('../fonts/Bellota-Regular.otf');
+}
+@font-face{
+    font-family: 'Bellota-BoldItalic';
+    src:url('../fonts/Bellota-BoldItalic.otf');
+}
+body{
+    line-height: 17px;
+    background-color: #e6eae8;
+
+}
+.top_bar{
+    width: 100%;
+    min-width: 1050px;
+    height: 40px;
+    background-color: #336E7B;
+    border-bottom: 0.25em solid #67809F;
+    margin: 0 0 10px 0;
+    display: inline-flex;
+    position: fixed;
+    z-index: 10;
+
+}
+.syllabus{
+
+    background: #fff;
+    font-size: 20;
+    font-family: 'Bellota-Regular', sans-serif;
+}
+.syllabus h2{
+    font-family: 'Bellota-BoldItalic', sans-serif;
+    text-align: center;
+    color: #34495E;
+}
+.syllabus img{
+    height: 150px;
+    width: 150px;
+}
+.syllabus a{
+    text-decoration: none;
+    color: #336E7B;
+
+}
+.syllabus a:hover{
+    color: #26A65B;
+}
+table{
+    margin-left: 150px;
+    color: #34495E;
+    margin-right: 110px;
+}
+
+.syllabusa{
+    background: #fff;
+    font-size: 16;
+    font-family: Arial;
+    
+}
+.syllabusa h2,h3{
+     
+    font-family: Arial;
+    text-align: center;
+}
+.text{
+    margin: 20px 20px 80px 70px;
+}
+.parts{
+    margin: 20px 20px 80px 70px;
+}
+
+.notee {
+    background-color: #fff;
+}
+.notee h2{
+    font-family: 'Bellota-BoldItalic', sans-serif;
+    text-align: center;
+    color: #34495E;
+    font-size: 50;
+}
+.notee a{
+    text-align: center;
+    font-size: 24;
+    margin-left: 80px;
+}
+.notee img{
+    height: 220px;
+    width: 220px;
+    border-radius: 50%;
+}
+#image{
+
+    height: 100%;
+    width: 100%;
+}
+}
