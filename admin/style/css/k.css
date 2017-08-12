@@ -6,7 +6,11 @@ h1.page-header {
 .sidebar {
 	padding-left: 0;
 }
-
+.container-fluid{
+	background-color: #24cc9c;
+	color: #fff;
+	
+}
 .main-container { 
 	background: #FFF;
 	padding-top: 15px;
@@ -344,14 +348,14 @@ h1.page-header {
 .user_table{
 	margin-left:250px;
     border: 1px solid #DCDCDC;
-    width: 1050px;
-    height: 1000px;
+    width: 800px;
+    height: 800px;
     background-color: #F2F1EF;
 }
 .post_table{
 	margin-left:250px;
     border: 1px solid #DCDCDC;
-    width: 1050px;
+    width: 900px;
     height: 800px;
     background-color: #F2F1EF;
 }
@@ -391,7 +395,7 @@ h1.page-header {
 
 }
 th,td{
-	padding: 7px;
+	padding: 1px;
 	border-bottom: 1px solid #ddd;
 }
 tr:nth-child(even) {
@@ -439,4 +443,5 @@ th {
 .pie_chart{
 	margin-left: 420px;
 	color: steelblue;
+	margin-top: -40px;
 }

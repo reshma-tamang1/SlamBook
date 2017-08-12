@@ -18,7 +18,7 @@ a{
 	width: 100%;
 	min-width: 1050px;
 	height: 40px;
-	background-color: #336E7B;
+	background-color: #03A678;
 	border-bottom: 0.25em solid #67809F;
 	margin: 0 0 10px 0;
 	display: inline-flex;
@@ -41,7 +41,7 @@ a:hover{
 
 nav{
 	float: right;
-	right: 1px;
+	right: 36px;
 	position: absolute;
 	margin: 10px;
 }
@@ -222,8 +222,8 @@ margin: 0;
 	height: 100%;
 	float: left;
 	position: relative;
-	background-color: #809fc5;
-	border-right: 10px solid #618da2;
+	background-color: rgb(127, 203, 181);
+	border-right: 5px solid #618da2;
 	color: #CBEAF8;
 	margin-right: 20px;
 }
@@ -247,7 +247,11 @@ margin: 0;
 	margin: 0 0 0 20px;
 	word-wrap: break-word;
 }
+.profile_info a:hover {
 
+	text-decoration: underline;
+	color: green;
+}
 .danger {
 	background-color: #e74c3c;
 }
@@ -575,9 +579,9 @@ margin: 0;
    cursor: pointer;
 }
 
-.postedImage img {
-	max-height: 300px;
-    max-width: 100%;
+.postedImage  {
+	max-width: 600px;
+    max-height: 600px;
     display: block;
     margin: 5px auto;
 }
@@ -602,4 +606,74 @@ th {
     color: white;
 }
 
+.new{
+	width: 250px;
+    float: left;
+    margin-bottom: 4px;
+    background-color: white;
 
+}
+.new a{
+	color: #555555;
+    font-size: 18px;
+    text-decoration-color: #e82064;
+    font-family: sans-serif;
+}
+
+.new a:hover{
+	text-decoration: underline;
+	color: #e82064;
+}
+
+.profile_info a{
+   color: #fff;
+  }
+
+ .profile_info a: hover{
+   color: #000;
+   text-decoration: underline;
+  }
+  .requestUserImage{
+  	 height: 50px;
+    width: 50px;
+    border-radius: 20px;
+  }
+  .navigationImage {
+    height: 30px;
+width: 30px;
+
+    
+}
+.trends{
+
+	margin-left: 40px;
+	font-size: 16;
+
+}
+.trends a:hover{
+	text-decoration: underline;
+	color: green;
+}
+
+.trend_area h1{
+	color: darkcyan;
+    font-family: -webkit-pictograph;
+    margin-bottom: 65px;
+    font-size: 40px;
+}
+
+.trend_post{
+	margin: 0 70px 0 100px;
+}
+#post_column{
+	
+	width: 800px;
+    margin-left: 100px;
+}
+#post_body{
+	margin-left: 56px;
+}
+.main{
+	background-color: #fff;
+	width: 1000px;
+}

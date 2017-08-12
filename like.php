@@ -2,6 +2,7 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -78,18 +79,18 @@
 
 	if($num_rows > 0) {
 		echo '<form action="like.php?post_id=' . $post_id . '" method="POST">
-				<input type="submit" class="comment_like" name="unlike_button" value="Unlike">
+				<i class="fa fa-thumbs-o-down" aria-hidden="true"></i></i><input type="submit" class="comment_like" name="unlike_button" value="Unlike">
 				<div class="like_value">
-					'. $total_likes .' Likes
+					'. $total_likes .' 
 				</div>
 			</form>
 		';
 	}
 	else {
 		echo '<form action="like.php?post_id=' . $post_id . '" method="POST">
-				<input type="submit" class="comment_like" name="like_button" value="Like">
+				<i class="fa fa-thumbs-o-up" aria-hidden="true"></i><input type="submit" class="comment_like" name="like_button" value="Like">
 				<div class="like_value">
-					'. $total_likes .' Likes
+					'. $total_likes .' 
 				</div>
 			</form>
 		';

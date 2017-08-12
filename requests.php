@@ -10,14 +10,14 @@ include("includes/header.php");
 
 	$query = mysqli_query($con, "SELECT * FROM friend_requests WHERE user_to='$userLoggedIn'");
 	if(mysqli_num_rows($query) == 0)
-		echo "You have no friend requests at this time!";
+		echo "You have no follow requests at this time!";
 	else {
 
 		while($row = mysqli_fetch_array($query)) {
 			$user_from = $row['user_from'];
 			$user_from_obj = new User($con, $user_from);
 
-			echo $user_from_obj->getFirstAndLastName() . " sent you a follow request!";
+			echo "<img src='" . $user_from_obj->getProfilePic() . "' class='requestUserImage''>" . $user_from_obj->getFirstAndLastName() . " sent you a follow request!"; 
 
 			$user_from_friend_array = $user_from_obj->getFriendArray();
 

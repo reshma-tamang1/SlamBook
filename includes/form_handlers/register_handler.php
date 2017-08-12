@@ -5,10 +5,12 @@ $lname=""; //Last Name
 $em =""; //email
 $em2=""; //email2
 $stuid =""; //student id
-$faculty=""; //Faculty
+$fac=""; //Faculty
 $password=""; //Password
 $password2 =""; //password2
 $date=""; //signup date
+$designation=""; //designation
+$gender="";
 $error_array=array(); //holds error messages
 
 if(isset($_POST['register_button'])){
@@ -35,17 +37,27 @@ if(isset($_POST['register_button'])){
   	$em2 = ucfirst(strtolower($em2));	//Upper case first 
   	$_SESSION['reg_email2'] = $em2;
 
+  	
+  	$designation= strip_tags($_POST['designation']); //Remove HTML tags
+	 $designation = str_replace('', '', $designation); //Remove Spaces
+  	$designation= ucfirst(strtolower($designation));	//Upper case first 
+	$_SESSION['designation'] = $designation;
+  	
+  	$fac= strip_tags($_POST['fac']); //Remove HTML tags
+	 $fac = str_replace('', '', $fac); //Remove Spaces
+  	$fac= ucfirst(strtolower($fac));	//Upper case first 
+	$_SESSION['fac'] = $fac;
 
+    $gender= strip_tags($_POST['gender']); //Remove HTML tags
+	 $gender = str_replace('', '', $gender); //Remove Spaces
+  	$gender= ucfirst(strtolower($gender));	//Upper case first 
+	$_SESSION['gender'] = $gender;
   	//student id
   	$stuid= strip_tags($_POST['reg_sid']); //Remove HTML tags
 	 $stuid = str_replace('', '', $stuid); //Remove Spaces
   	$stuid = ucfirst(strtolower($stuid));	//Upper case first 
   	$_SESSION['reg_sid'] = $stuid;
-  	//FAculty
-  	$faculty= strip_tags($_POST['reg_faculty']); //Remove HTML tags
-	 $faculty = str_replace('', '', $faculty); //Remove Spaces
-  	$faculty = ucfirst(strtolower($faculty));
-  	$_SESSION['reg_faculty'] = $faculty;
+  	
   	//password
   	$password= strip_tags($_POST['reg_password']); //Remove HTML tags
 	 
@@ -109,7 +121,7 @@ if(isset($_POST['register_button'])){
 
 	
 
-	if (!preg_match('/^[Kk][Ee][Cc][6-8][0-9][0-9][0-9][0-9]*$/', $stuid)) {
+	if (!preg_match('/^[Kk][Ee][Cc][5-8][0-9][0-9][0-9][0-9]*$/', $stuid)) {
 		array_push($error_array, "Your Id is invalid.Please Follow your card pattern.<br>");
 	}
 	
@@ -142,15 +154,17 @@ if(isset($_POST['register_button'])){
 			$profile_pic = "assets/images/profile/defaults/head_alizarin.png";
 		}
 		
-		$query = mysqli_query($con,"INSERT INTO users VALUES ('','$fname','$lname','$username','$em','$stuid','$faculty','$password','$date','$profile_pic','0','0','no',',')");
+		$query = mysqli_query($con,"INSERT INTO users VALUES ('','$fname','$lname','$username','$em','$stuid','$designation','$fac','$gender','$password','$date','$profile_pic','0','0','no',',')");
 		array_push($error_array,"<span style ='color: #14C800;'> You're set to go Ahead!! </span><br>");
 		//Clear session variables 
 		$_SESSION['reg_fname'] = "";
 		$_SESSION['reg_lname'] = "";
 		$_SESSION['reg_email'] = "";
 		$_SESSION['reg_email2'] = "";
-		$_SESSION['reg_faculty'] = "";
+		
 		$_SESSION['reg_sid'] = "";
+		$_SESSION['fac'] = "";
+		$_SESSION['designation'] = "";
 		
 	}	
 } ?>

@@ -38,14 +38,17 @@ if(isset($_POST['respond_request'])) {
  		<img src="<?php echo $user_array['profile_pic']; ?>">
 
  		<div class="profile_info">
+      <p><b>ABOUT</b> </p><br>
       <p><?php echo "Username: " . $user_array['username']; ?></p>
+      <p><?php echo "Gender: " . $user_array['Gender']; ?></p>
  			<p><?php echo "KEC-ID: " . $user_array['student_id']; ?></p>
       <p><?php echo "Faculty: " . $user_array['faculty']; ?></p>
+      <p><?php echo "Type: " . $user_array['designation']; ?></p>
       <p><?php echo "Posts: " . $user_array['num_posts']; ?></p>
  			<p><?php echo "Likes: " . $user_array['num_likes']; ?></p>
- 			<p><?php echo "Friends: " . $num_friends ?></p>
+      <p><?php echo "<a href='Friends.php'>Friends:$num_friends </a>"; ?><p>
  		</div>
-
+    
  		<form action="<?php echo $username; ?>" method="POST">
  			<?php 
  			$profile_user_obj = new User($con, $username); 
@@ -90,7 +93,9 @@ if(isset($_POST['respond_request'])) {
 	<div class="profile_main_column column">
         <ul class="nav nav-tabs" role="tablist" id="profileTabs">
       <li role="presentation" class="active"><a href="#newsfeed_div" aria-controls="newsfeed_div" role="tab" data-toggle="tab">Timeline</a></li>
-        <li role="presentation"><a href="settings.php" >About</a></li>
+        
+        
+        
         
       </ul>
  

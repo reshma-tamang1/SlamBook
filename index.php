@@ -13,13 +13,13 @@ if(isset($_POST['post'])){
 		$imageName = $targetDir . uniqid() . basename($imageName);
 		$imageFileType = pathinfo($imageName, PATHINFO_EXTENSION);
 
-		if($_FILES['fileToUpload']['size'] > 10000000) {
+		if($_FILES['fileToUpload']['size'] > 100000000) {
 			$errorMessage = "Sorry your file is too large";
 			$uploadOk = 0;
 		}
 
-		if(strtolower($imageFileType) != "jpeg" && strtolower($imageFileType) != "png" && strtolower($imageFileType) != "jpg" && strtolower($imageFileType) != "mp4" && strtolower($imageFileType) != "docx")  {
-			$errorMessage = "Sorry, only jpeg, jpg and png files are allowed";
+		if(strtolower($imageFileType) != "jpeg" && strtolower($imageFileType) != "png" && strtolower($imageFileType) != "jpg" && strtolower($imageFileType) != "gif"&& strtolower($imageFileType) != "mp4" && strtolower($imageFileType) != "docx" && strtolower($imageFileType) != "mkv")  {
+			$errorMessage = "Sorry, only jpeg, jpg, mp4 and png files are allowed";
 			$uploadOk = 0;
 		}
 
@@ -30,6 +30,7 @@ if(isset($_POST['post'])){
 			else {
 				//image did not upload
 				$uploadOk = 0;
+				echo "image didnt upload";
 			}
 		}
 
@@ -85,33 +86,51 @@ if(isset($_POST['post'])){
 
 
 	</div>
-
+		<div class="new"><a href="messages.php"> Create New Message</a></div>
 	<div class="user_details column">
 
-		<h4>Popular</h4>
+		<h4>TRENDING NOW</h4>
 
 		<div class="trends">
 			<?php 
-			$query = mysqli_query($con, "SELECT * FROM trends ORDER BY hits DESC LIMIT 9");
+			$query = mysqli_query($con, "SELECT * FROM trends ORDER BY hits DESC LIMIT 7");
 
 			foreach ($query as $row) {
 				
-				$word = $row['title'];
-				$word_dot = strlen($word) >= 14 ? "..." : "";
+				$trendingword = $row['title'];
+				$word_dot = strlen($trendingword) >= 14 ? "..." : "";
 
-				$trimmed_word = str_split($word, 14);
+				$trimmed_word = str_split($trendingword, 14);
 				$trimmed_word = $trimmed_word[0];
 
 				echo "<div style'padding: 1px'>";
-				echo $trimmed_word . $word_dot;
+				 echo '<i class="fa fa-link" aria-hidden="true"></i>';
+				 echo " <a href='trend.php?trendingWord=" . $trendingword . "'>" . $trimmed_word . "</a>";
 				echo "<br></div><br>";
 
 
 			}
 
+
+
 			?>
 		</div>
+		<style type="text/css">
 
+@font-face{
+    font-family: 'Bellota-BoldItalic';
+    src:url('../fonts/Bellota-BoldItalic.otf');
+}
+
+ h4{
+ 	margin-left: 30px;
+    color: #060203;
+   font-family: 'Bellota-BoldItalic', sans-serif;
+   font-size: 21px;
+    margin-bottom: 13px;
+ }
+
+</style>
 
 	</div>
 

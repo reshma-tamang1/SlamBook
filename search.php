@@ -28,7 +28,7 @@ else {
 
 		//If query contains an underscore, assume user is searching for usernames
 		if($type == "username") 
-			$usersReturnedQuery = mysqli_query($con, "SELECT * FROM users WHERE username LIKE '$query%' AND user_closed='no' LIMIT 8");
+			$usersReturnedQuery = mysqli_query($con, "SELECT * FROM users WHERE username LIKE '$query%' AND user_closed='no' LIMIT 20");
 		//If there are two words, assume they are first and last names respectively
 		else {
 
@@ -63,13 +63,13 @@ else {
 
 				//Generate button depending on friendship status 
 				if($user_obj->isFriend($row['username']))
-					$button = "<input type='submit' name='" . $row['username'] . "' class='danger' value='Remove Friend'>";
+					$button = "<input type='submit' name='" . $row['username'] . "' class='danger' value='Unfollow Friend'>";
 				else if($user_obj->didReceiveRequest($row['username']))
 					$button = "<input type='submit' name='" . $row['username'] . "' class='warning' value='Respond to request'>";
 				else if($user_obj->didSendRequest($row['username']))
 					$button = "<input type='submit' class='default' value='Request Sent'>";
 				else 
-					$button = "<input type='submit' name='" . $row['username'] . "' class='success' value='Add Friend'>";
+					$button = "<input type='submit' name='" . $row['username'] . "' class='success' value='Follow Friend'>";
 
 				$mutual_friends = $user_obj->getMutualFriends($row['username']) . " friends in common";
 

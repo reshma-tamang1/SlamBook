@@ -18,7 +18,13 @@ class User {
 		$query = mysqli_query($this->con, "SELECT * FROM friend_requests WHERE user_to='$username'");
 		return mysqli_num_rows($query);
 	}
-
+	public function getFriendsArray() {
+  	     $friend_array_string = $this->user['friend_array']; //Get friend array string from table
+ 
+   		$friend_array_string = trim($friend_array_string, ","); //Remove first and last comma
+ 
+    	return explode(",", $friend_array_string); //Split to array at each comma
+}
 	public function getNumPosts() {
 		$username = $this->user['username'];
 		$query = mysqli_query($this->con, "SELECT num_posts FROM users WHERE username='$username'");

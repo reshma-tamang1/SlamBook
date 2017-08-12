@@ -15,13 +15,54 @@ body{
     width: 100%;
     min-width: 1050px;
     height: 40px;
-    background-color: #336E7B;
+    background-color: #03A678;
     border-bottom: 0.25em solid #67809F;
-    margin: 0 0 10px 0;
+    margin: -10px 0 10px 0;
     display: inline-flex;
     position: fixed;
     z-index: 10;
 
+}
+nav{
+    float: right;
+    right: 36px;
+    position: absolute;
+    margin: 10px;
+}
+nav a {
+    font-family: "comic sans ms", times, arial black;
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+
+}
+
+nav a:hover{
+
+    border-bottom: 7px solid #87D37C;
+    color: #fff;
+}
+}
+nav{
+    float: right;
+    right: 36px;
+    position: absolute;
+    margin: 10px;
+}
+nav a {
+    font-family: "comic sans ms", times, arial black;
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+
+}
+
+nav a:hover{
+
+    border-bottom: 7px solid #87D37C;
+    color: #fff;
 }
 .syllabus{
 

@@ -9,9 +9,9 @@ include("includes/header.php");
   
 </head>
 <body>
-<div class="main_column column">
+<div class="main">
   <h3 align="center">Notices</h3>
-  <table class="user_table"   >
+  <table class="user_table" cellspacing="10"  >
 
     <tr bgcolor="#000000" border = "1" >
       <th>No.</th>
@@ -43,9 +43,9 @@ include("includes/header.php");
     <tr >
     <td><?php echo  $i;?></td>
     <td><?php echo  $note_name;?></td>
-    <td><?php echo  "<a href='" . $details . "'>" . $details . "</a>";?></td>
+    <td ><?php echo  "<a href='" . $details . "'>" . $details . "</a>";?></td>
     
-    <td><?php echo  $note_date;?></td>
+    <td width="20px"><?php echo  $note_date;?></td>
     
     </tr>
     <?php } ?>

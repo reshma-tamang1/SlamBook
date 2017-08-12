@@ -19,7 +19,9 @@ include("includes/header.php");
  	<br><br>
   <tr>
     <td><a href="syllabus.php">
-  <img src="assets/images/icons/syllabus.png" alt="syll" > <h3>Syllabus</h3>  <p>Complete Syllabus of all streams with marking schemes</p>
+  <img src="assets/images/icons/syllabus.png" alt="syll" > 
+  <h3>Syllabus</h3> 
+   <p>Complete Syllabus of all streams with marking schemes</p>
 </a></td>
     <td><a href="notes.php"><br>
   <img src="assets/images/icons/notes.jpg" alt="note" > <h3>Notes</h3> <p>Collection of Notes and Handsout by teachers </p> 

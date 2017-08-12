@@ -13,12 +13,12 @@
 <table class="user_table"   >
 
     <tr bgcolor="#000000" border = "1" >
-      <th>No.</th>
+      <th>DB ID</th>
       <th>First Name</th>
       <th>Last Name</th>
       <th>UserName</th>
       <th>Email</th>
-      <th>Student ID</th>
+      <th>ID</th>
       <th>Faculty</th>
       <th>Signup Date</th>
       <th>Profile Picture</th>
@@ -39,7 +39,7 @@
     include("include/side_bar.php");
 
     
-    $sel_users = "select * from users ORDER by 1 DESC";
+    $sel_users = "select * from users ORDER by 1 ASC";
     $run_users = mysqli_query($connection,$sel_users);
     
     $i=0;
@@ -61,7 +61,7 @@
     ?>
     
     <tr >
-    <td><?php echo  $i;?></td>
+    <td><?php echo  $id;?></td>
     <td><?php echo  $first_name;?></td>
     <td><?php echo  $last_name;?></td>
     <td><?php echo  $username;?></td>

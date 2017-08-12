@@ -79,7 +79,7 @@ if(isset($_POST['register_button'])) {
 			 	if (isset($_SESSION['reg_email'])) {
 			 	  	echo $_SESSION['reg_email'];
 			 	  }  ?>"required> <br>
-
+			 	  <?php if(in_array("Invalid email format<br>", $error_array)){ echo "Invalid email format<br>";} ?>
 			 	
 			 	<input type="email" name="reg_email2" placeholder="Confirm Email" value="<?php 
 					if(isset($_SESSION['reg_email2'])) {
@@ -87,9 +87,11 @@ if(isset($_POST['register_button'])) {
 					} 
 					?>" required>
 					<br>
-					<?php if(in_array("Email already in use<br>", $error_array)) echo "Email already in use<br>"; 
-					else if(in_array("Invalid email format<br>", $error_array)) echo "Invalid email format<br>";
-					else if(in_array("Emails don't match<br>", $error_array)) echo "Emails don't match<br>"; ?>
+					<?php if(in_array("Email already in use<br>", $error_array)) {echo "Email already in use<br>"; } 
+					 
+				     elseif (in_array("Emails don't match<br>", $error_array)) {
+				    	echo "Emails don't match<br>";
+				    } ?>
 
 
 			 	<input type="text" name="reg_sid" placeholder="KEC-ID" value= "<?php
@@ -99,23 +101,32 @@ if(isset($_POST['register_button'])) {
 					<?php if (in_array("Your Id is invalid.Please Follow your card pattern.<br>",$error_array)) {
 			 	  	echo "Your Id is invalid.Please Follow your card pattern.<br>";
 			 	  } ?>
-
-			 	<input type="text" name="reg_faculty" placeholder="Faculty" value= "<?php
-			 	if (isset($_SESSION['reg_faculty'])) {
-			 	  	echo $_SESSION['reg_faculty'];
-			 	  }  ?>"required><br>
+			 	  <div class="input">
+			 		I am :<input type="radio" name="designation" value="student" />Student 
+                     <input type="radio" name="designation" value="teacher" />Teacher <br/><br>
+                    Gender :<input type="radio" name="gender" value="Male" />Male 
+                     <input type="radio" name="gender" value="Female" /> Female<br/><br>
+					Faculty : <select id="fac" name="fac">                      
+                      <option value="not selected">--Select Faculty--</option>
+                      <option value="Architecture">Architecture</option>
+                      <option value="Civil">Civil</option>
+                      <option value="Electrical">Electrical</option>
+                        <option value="Computer">Computer</option>
+                      <option value="Electronics">Electronics</option>
+                    </select><br>
 
 			 	  <?php if (in_array("Email already in use<br>",$error_array)) {
 			 	  	echo "Email already in use<br>";
-			 	  } ?>
+			 	  } ?></div><br>
 
 				<input type="password" name="reg_password" placeholder="Password" required>
 					<br>
+					<?php   if(in_array("Your password can only contain english characters or numbers<br>", $error_array)) echo "Your password can only contain english characters or numbers<br>";?>
 				<input type="password" name="reg_password2" placeholder="Confirm Password" required>
 					<br>
-				<?php if(in_array("Your passwords do not match<br>", $error_array)) echo "Your passwords do not match<br>"; 
-					else if(in_array("Your password can only contain english characters or numbers<br>", $error_array)) echo "Your password can only contain english characters or numbers<br>";
-					else if(in_array("Your Password insufficient, must be between 8 to 25<br>", $error_array)) echo "Your Password insufficient, must be between 8 to 25<br>"; ?>
+				<?php if(in_array("Your passwords do not match<br>", $error_array)) echo "Your passwords do not match<br>";
+					else if(in_array("Your Password insufficient, must be between 8 to 25<br>", $error_array)) echo "Your Password insufficient, must be between 8 to 25<br>";?> 
+					
 			 	  	
 
 			 	<input type="Submit" name="register_button" value="Register " required><br>

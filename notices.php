@@ -10,12 +10,12 @@ include("includes/header.php");
 </head>
 <body>
 <div class="main_column column">
-  <h3 align="center">Notices</h3>
+  <h3 align="center">Notice Board</h3>
   <table class="user_table"   >
 
     <tr bgcolor="#000000" border = "1" >
       <th>No.</th>
-      <th> Name</th>
+      <th>Title</th>
       <th>Details</th>
       <th>Date</th>
       
@@ -26,26 +26,26 @@ include("includes/header.php");
     
 
     
-    $sel_users = "select * from notes ORDER by 1 DESC";
+    $sel_users = "select * from notices ORDER by 1 DESC";
     $run_users = mysqli_query($con,$sel_users);
     
     $i=0;
     
     while($row_users = mysqli_fetch_array($run_users)){
       
-      $note_name = $row_users['note_name'];
+      $notice_name = $row_users['notice_name'];
       $details = $row_users['details'];
-      $note_date = $row_users['note_date'];
+      $notice_date = $row_users['notice_date'];
       
       $i++;
     ?>
     
     <tr >
     <td><?php echo  $i;?></td>
-    <td><?php echo  $note_name;?></td>
+    <td><?php echo  $notice_name;?></td>
     <td><?php echo  "<a href='" . $details . "'>" . $details . "</a>";?></td>
     
-    <td><?php echo  $note_date;?></td>
+    <td><?php echo  $notice_date;?></td>
     
     </tr>
     <?php } ?>

@@ -9,28 +9,15 @@ $details=$_POST['details'];
 $result_date=date("Y-m-d H:i:s");
 
 
-//picture coding
-$picture_name=$_FILES['picture']['name'];
-$picture_type=$_FILES['picture']['type'];
-$picture_tmp_name=$_FILES['picture']['tmp_name'];
-$picture_size=$_FILES['picture']['size'];
 
-if($picture_type=="image/jpeg" || $picture_type=="image/jpg" || $picture_type=="image/png" || $picture_type=="image/gif")
-{
-	if($picture_size<=50000000)
-	{
-		$pic_name=time()."_".$picture_name;
-		move_uploaded_file($picture_tmp_name,"images/".$pic_name);
-		
-mysqli_query($connection,"insert into results (result_id,result_name,details, image,result_date) values ('','$result_name','$details','$pic_name','$result_date')") or die ("query incorrect");
+mysqli_query($connection,"insert into results (result_id,result_name,details, result_date) values ('','$result_name','$details','$result_date')") or die ("query incorrect");
 
  header("location: submit_form.php?success=1");
 }else
 {}
-}else
-{}
+
 mysqli_close($connection);
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,19 +38,16 @@ mysqli_close($connection);
     <div class="col-md-9 content" style="margin-left:10px">
   	<div class="panel panel-default">
 	<div class="panel-heading" style="background-color:#c4e17f">
-	<h1><span class="glyphicon glyphicon-tag"></span> results / Add result  </h1></div><br>
+	<h1><span class="glyphicon glyphicon-tag"></span> Results / Add result  </h1></div><br>
 	<div class="panel-body" style="background-color:#E6EEEE;">
 		<div class="col-lg-7">
-        <div class="well">
+        <div class="well" style="color: black;">
         <form action="add_results.php" method="post" name="form" enctype="multipart/form-data">
         <p>Title</p>
-        <input class="input-lg thumbnail form-control" type="text" name="result_name" id="result_name" autofocus style="width:100%" placeholder="result Title" required>
+        <textarea class="input-lg thumbnail form-control" type="text" name="result_name" id="result_name" autofocus style="width:100%" placeholder="result Title" required></textarea>
 <p>Description</p>
 <textarea class="thumbnail form-control" name="details" id="details" style="width:100%; height:100px" placeholder="write here..." required></textarea>
-<p>Add Image</p>
-<div style="background-color:#CCC">
-<input type="file" style="width:100%" name="picture" class="btn thumbnail" id="picture" >
-</div>
+
 </div>
         
 

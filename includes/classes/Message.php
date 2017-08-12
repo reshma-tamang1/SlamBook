@@ -60,7 +60,7 @@ class Message {
 		$query = mysqli_query($this->con, "SELECT body, user_to, date FROM messages WHERE (user_to='$userLoggedIn' AND user_from='$user2') OR (user_to='$user2' AND user_from='$userLoggedIn') ORDER BY id DESC LIMIT 1");
 
 		$row = mysqli_fetch_array($query);
-		$sent_by = ($row['user_to'] == $userLoggedIn) ? "They said: " : "You said: ";
+		$sent_by = ($row['user_to'] == $userLoggedIn) ? "said: " : "You said: ";
 
 		//Timeframe
 		$date_time_now = date("Y-m-d H:i:s");

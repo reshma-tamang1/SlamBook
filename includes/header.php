@@ -76,12 +76,12 @@ include("includes/classes/Notification.php");
 				$num_requests = $user_obj->getNumberOfFriendRequests();
 			?>
 
-
+		<img class="navigationImage" src="<?php echo $user['profile_pic']; ?>">	
 		<a href="<?php echo $userLoggedIn;?>"> <?php 
 		echo $user['first_name'];
 		 ?>
 		 </a>
-		<a href="index.php"><i class="fa fa-home" aria-hidden="true"></i></a>
+		<a href="index.php"><i class="fa fa-home fa-lg" aria-hidden="true"></i></a>
 		<a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'message')">
 				<i class="fa fa-envelope fa-lg"></i>
 				<?php
@@ -89,21 +89,21 @@ include("includes/classes/Notification.php");
 				 echo '<span class="notification_badge" id="unread_message">' . $num_messages . '</span>';
 				?>
 			</a>
-		<a href="requests.php"><i class="fa fa-users" aria-hidden="true"></i>
+		<a href="requests.php"><i class="fa fa-users fa-lg" aria-hidden="true"></i>
 		<?php
 				if($num_requests > 0)
 				 echo '<span class="notification_badge" id="unread_requests">' . $num_requests . '</span>';
 				?></a>
 		
-		<a href="resource.php"><i class="fa fa-book" aria-hidden="true"></i>
+		<a href="resource.php"><i class="fa fa-book fa-lg" aria-hidden="true"></i>
 		<a href="javascript:void(0);" onclick="getDropdownData('<?php echo $userLoggedIn; ?>', 'notification')">
-				<i class="fa fa-bell fa-lg"></i>
+				<i class="fa fa-bell fa-lg"></i> 
 				<?php
 				if($num_notifications > 0)
 				 echo '<span class="notification_badge" id="unread_notification">' . $num_notifications . '</span>';
 				?>
 			</a>
-		<a href="settings.php"><i class="fa fa-cog" aria-hidden="true"></i></a>
+		<a href="settings.php"><i class="fa fa-cog fa-lg" aria-hidden="true"></i></a>
 		
 		<a href="includes/handlers/logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
 
